@@ -23,7 +23,6 @@
   <div class="hero">
     <p class="hero-eyebrow">UX DESIGNER · LG ELECTRONICS</p>
     <h1 class="hero-name">Ko<br>Jungin</h1>
-    <p class="hero-tagline">화면보다 구조를 먼저 설계하는 UX 디자이너.<br>하드웨어부터 SaaS까지, 선행부터 양산까지.</p>
     <div class="hero-meta">
       <span>📍 Seoul, Korea</span>
       <span>💼 3년 11개월차</span>
@@ -51,27 +50,9 @@
 </div>
 </div>
 
-<!-- STAT STRIP -->
-<div class="container">
-  <div class="stat-strip" style="margin-top: 3rem;">
-    <div class="stat-item">
-      <div class="stat-num">75<span class="unit">%</span></div>
-      <div class="stat-label">기획~오픈 리드타임 단축</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">10<span class="unit">초</span></div>
-      <div class="stat-label">webOS 결제 완료 시간 단축</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">20<span class="unit">%</span></div>
-      <div class="stat-label">디자인 워크플로 작업시간 단축</div>
-    </div>
-  </div>
-</div>
-
 <!-- WORK LIST -->
 <div class="container">
-  <div class="work-list" id="work-list"></div>
+  <div class="work-list" id="work-list" style="margin: 3.5rem 0 4.5rem;"></div>
   <div class="empty-state" id="empty-state">해당하는 프로젝트가 없습니다.</div>
 </div>
 
@@ -163,20 +144,11 @@
 
   var domainLabels = { b2c: 'B2C', b2b: 'B2B', hw: '하드웨어', web: '웹', int: '내부 툴' };
   var roleLabels = { proto: '프로토타이핑', desksys: '디자인시스템', research: '리서치/UT', collab: '개발협업' };
+  var domainColors = { b2c: '#FF5A36', b2b: '#7B61FF', hw: '#00A9E0', web: '#00BF8A', int: '#FFB627' };
+  var domainTextColors = { b2c: '#fff', b2b: '#fff', hw: '#fff', web: '#fff', int: '#14140F' };
+  var roleColors = { proto: '#EC4899', desksys: '#16A34A', research: '#0EA5E9', collab: '#E08A00' };
 
   var state = { domain: 'all', role: 'all' };
-
-  function hexToRgb(hex) {
-    var n = parseInt(hex.slice(1), 16);
-    return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
-  }
-  function mixHex(hexA, hexB, t) {
-    var a = hexToRgb(hexA), b = hexToRgb(hexB);
-    var r = Math.round(a.r + (b.r - a.r) * t);
-    var g = Math.round(a.g + (b.g - a.g) * t);
-    var bl = Math.round(a.b + (b.b - a.b) * t);
-    return 'rgb(' + r + ',' + g + ',' + bl + ')';
-  }
 
   function countTags(key, labels) {
     var counts = {};
@@ -187,22 +159,22 @@
     return counts;
   }
 
-  function buildFilterGroup(container, labels, counts, filterKey) {
+  function buildFilterGroup(container, labels, counts, filterKey, colors, textColors) {
     var values = Object.keys(labels);
     var countVals = values.map(function (v) { return counts[v]; });
     var min = Math.min.apply(null, countVals);
     var max = Math.max.apply(null, countVals);
 
-    var html = '<button class="filter-btn ' + filterKey + '-btn active" data-filter="' + filterKey + '" data-value="all">전체</button>';
+    var html = '<button class="filter-btn all-btn active" data-filter="' + filterKey + '" data-value="all">전체</button>';
     values.forEach(function (v) {
       var c = counts[v];
       var t = max === min ? 0.5 : (c - min) / (max - min);
-      var size = (12.5 + t * 6).toFixed(1);
-      var weight = 600 + Math.round(t * 2) * 100;
-      var html2 = labels[v];
+      var size = (15 + t * 9).toFixed(1);
+      var bg = colors[v];
+      var color = textColors ? textColors[v] : '#fff';
       html += '<button class="filter-btn ' + filterKey + '-btn" data-filter="' + filterKey + '" data-value="' + v + '" ' +
-        'style="--freq-size: ' + size + 'px; --freq-weight: ' + Math.min(weight, 800) + ';">' +
-        html2 + '</button>';
+        'style="--freq-size: ' + size + 'px; --freq-bg: ' + bg + '; --freq-color: ' + color + ';">' +
+        labels[v] + '</button>';
     });
     container.innerHTML = html;
   }
@@ -321,8 +293,8 @@
 
   var domainCounts = countTags('domain', domainLabels);
   var roleCounts = countTags('role', roleLabels);
-  buildFilterGroup(document.getElementById('domain-filters'), domainLabels, domainCounts, 'domain');
-  buildFilterGroup(document.getElementById('role-filters'), roleLabels, roleCounts, 'role');
+  buildFilterGroup(document.getElementById('domain-filters'), domainLabels, domainCounts, 'domain', domainColors, domainTextColors);
+  buildFilterGroup(document.getElementById('role-filters'), roleLabels, roleCounts, 'role', roleColors, null);
   buildCards();
   attachFilterHandlers();
   applyFilter();
