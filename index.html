@@ -172,21 +172,24 @@
     return counts;
   }
 
+  var rotations = [-6, 5, -4, 7, -8, 4, 6, -5];
+
   function buildFilterGroup(container, labels, counts, filterKey, colors, textColors) {
     var values = Object.keys(labels);
     var countVals = values.map(function (v) { return counts[v]; });
     var min = Math.min.apply(null, countVals);
     var max = Math.max.apply(null, countVals);
 
-    var html = '<button class="filter-btn all-btn active" data-filter="' + filterKey + '" data-value="all">전체</button>';
-    values.forEach(function (v) {
+    var html = '<button class="filter-btn all-btn active" data-filter="' + filterKey + '" data-value="all" style="--rot: ' + rotations[0] + 'deg;">전체</button>';
+    values.forEach(function (v, i) {
       var c = counts[v];
       var t = max === min ? 0.5 : (c - min) / (max - min);
       var size = (15 + t * 9).toFixed(1);
       var bg = colors[v];
       var color = textColors ? textColors[v] : '#fff';
+      var rot = rotations[(i + 1) % rotations.length];
       html += '<button class="filter-btn ' + filterKey + '-btn" data-filter="' + filterKey + '" data-value="' + v + '" ' +
-        'style="--freq-size: ' + size + 'px; --freq-bg: ' + bg + '; --freq-color: ' + color + ';">' +
+        'style="--freq-size: ' + size + 'px; --freq-bg: ' + bg + '; --freq-color: ' + color + '; --rot: ' + rot + 'deg;">' +
         labels[v] + '</button>';
     });
     container.innerHTML = html;
