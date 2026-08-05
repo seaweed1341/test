@@ -247,7 +247,7 @@ section + section { border-top: 1px solid var(--border); }
 /* FILTER BAR (keyword cloud / diagram) */
 .filter-section { padding: 0; border-top: none !important; }
 .filter-wrap {
-  background: var(--surface-alt);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 4.5rem 0 5rem;
@@ -268,9 +268,9 @@ section + section { border-top: 1px solid var(--border); }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.1rem;
-  flex: 1 1 320px;
-  max-width: 400px;
+  gap: 1.4rem;
+  flex: 1 1 340px;
+  max-width: 440px;
 }
 .filter-group-label {
   font-family: var(--mono);
@@ -281,36 +281,36 @@ section + section { border-top: 1px solid var(--border); }
 }
 .filter-circle {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 2px solid var(--border);
-  box-shadow: inset 0 0 0 10px var(--surface-alt);
-  overflow: hidden;
+  min-height: 220px;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 17%;
+  padding: 1.5rem 0.5rem;
 }
 .filter-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   height: auto;
-  padding: 0.75em 1.4em;
+  padding: 0.95em 1.75em;
+  margin: -0.35rem -0.9rem;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: -0.005em;
   cursor: pointer;
-  border: 3px solid transparent;
-  border-radius: 100px;
+  border: 3px solid #fff;
+  border-radius: 50%;
   background: #fff;
   color: var(--tag-text);
-  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  box-shadow: 0 3px 10px rgba(10,10,12,0.1);
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.16s ease, box-shadow 0.16s ease, z-index 0s;
   user-select: none;
-  line-height: 1.2;
+  line-height: 1.15;
+  z-index: 1;
 }
 .filter-btn.domain-btn,
 .filter-btn.role-btn {
@@ -319,13 +319,14 @@ section + section { border-top: 1px solid var(--border); }
   font-size: var(--freq-size, 14px);
 }
 .filter-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(10,10,12,0.18);
+  transform: rotate(var(--rot, 0deg)) translateY(-5px) scale(1.08);
+  box-shadow: 0 12px 22px rgba(10,10,12,0.22);
+  z-index: 5;
 }
 .filter-btn.active {
   border-color: var(--border-strong);
-  box-shadow: 0 6px 16px rgba(10,10,12,0.16);
-  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 18px rgba(10,10,12,0.2);
+  z-index: 4;
 }
 .filter-btn.all-btn {
   background: var(--tag-active-bg);
