@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>고정인 — UX Designer</title>
+<title>jungin.ko — UX Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,11 +25,11 @@
     <h1 class="hero-name">Ko Jungin</h1>
     <div class="hero-meta">
       <span>Seoul, Korea</span>
-      <span>3년 11개월차</span>
+      <span id="career-tenure"></span>
       <span>KR Native</span>
-      <span>EN OPIc IH</span>
-      <span>JP JLPT N2</span>
-      <span>CN HSK 5</span>
+      <span>EN Advanced</span>
+      <span>JP Advanced</span>
+      <span>CN Intermediate</span>
     </div>
   </div>
 </div>
@@ -133,6 +133,17 @@
 </footer>
 
 <script>
+(function () {
+  var careerStart = new Date(2022, 3, 1); // 2022.04 입사
+  var now = new Date();
+  var years = now.getFullYear() - careerStart.getFullYear();
+  var months = now.getMonth() - careerStart.getMonth();
+  if (now.getDate() < careerStart.getDate()) months -= 1;
+  if (months < 0) { years -= 1; months += 12; }
+  var tenureEl = document.getElementById('career-tenure');
+  if (tenureEl) tenureEl.textContent = years + '년 ' + months + '개월차';
+})();
+
 (function () {
   var projects = [
     { id: 'proj-05', href: 'project-05.html', title: 'webOS 로그인 케이스 구조 정리', hook: '이미 있던 문서에서, 아무도 검증하지 않았던 분류 기준을 다시 들여다봤어요', period: '2023.10 – 2024.05', domain: ['b2b','hw'], role: ['research'], acc: 'var(--acc-1)' },
