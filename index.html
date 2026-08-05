@@ -10,7 +10,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-name">고정인</a>
+  <a href="index.html" class="nav-name">jungin.ko</a>
   <ul class="nav-links">
     <li><a href="#work">WORK</a></li>
     <li><a href="#about">ABOUT</a></li>
@@ -22,30 +22,32 @@
 <div class="container">
   <div class="hero">
     <p class="hero-eyebrow">UX DESIGNER · LG ELECTRONICS</p>
-    <h1 class="hero-name">Ko<br>Jungin</h1>
+    <h1 class="hero-name">Ko Jungin</h1>
     <div class="hero-meta">
-      <span>📍 Seoul, Korea</span>
-      <span>💼 3년 11개월차</span>
-      <span>🇰🇷 KR Native</span>
-      <span>🇺🇸 EN OPIc IH</span>
-      <span>🇯🇵 JLPT N2</span>
-      <span>🇨🇳 HSK 5</span>
+      <span>Seoul, Korea</span>
+      <span>3년 11개월차</span>
+      <span>KR Native</span>
+      <span>EN OPIc IH</span>
+      <span>JP JLPT N2</span>
+      <span>CN HSK 5</span>
     </div>
   </div>
 </div>
 
-<!-- FILTER (keyword cloud) -->
+<!-- FILTER (keyword cloud / diagram) -->
 <div class="filter-section" id="work">
 <div class="filter-wrap">
   <div class="filter-inner">
-    <div class="filter-group">
-      <span class="filter-label">도메인</span>
+    <div class="filter-diagram">
+      <div class="filter-circle-wrap">
+        <span class="filter-group-label">domain</span>
+        <div class="filter-circle" id="domain-filters"></div>
+      </div>
+      <div class="filter-circle-wrap">
+        <span class="filter-group-label">role</span>
+        <div class="filter-circle" id="role-filters"></div>
+      </div>
     </div>
-    <div class="filter-group" id="domain-filters" style="margin-bottom: 1.3rem;"></div>
-    <div class="filter-group">
-      <span class="filter-label">역할</span>
-    </div>
-    <div class="filter-group" id="role-filters"></div>
   </div>
 </div>
 </div>
@@ -133,20 +135,20 @@
 <script>
 (function () {
   var projects = [
-    { id: 'proj-05', href: 'project-05.html', title: 'webOS 로그인<br>케이스 구조 정리', hook: '이미 있던 문서에서, 아무도 검증하지 않았던 분류 기준을 다시 들여다봤어요', period: '2023.10 – 2024.05', domain: ['b2b','hw'], role: ['collab'], acc: 'var(--acc-1)', case: 'CASE / 05' },
-    { id: 'proj-01', href: 'project-01.html', title: '스마트 TV<br>webOS Pay UX', hook: '법적 필수 태스크와 리모컨 사방향키라는 제약을 동시에 만족시키면서 결제 시간을 줄인 프로젝트예요', period: '2024.05 – 2024.12', domain: ['b2c','hw'], role: ['research','proto'], acc: 'var(--acc-2)', case: 'CASE / 01' },
-    { id: 'proj-02', href: 'project-02.html', title: '게이밍 모니터<br>선행·양산 UX', hook: '4년 만의 제품 리뉴얼에서 AI 기능과 기존 기능의 충돌을 막는 UI 구조를 설계했어요', period: '2025.02 – 2025.12', domain: ['b2c','hw'], role: ['research','proto'], acc: 'var(--acc-3)', case: 'CASE / 02' },
-    { id: 'proj-03', href: 'project-03.html', title: '의료용 앱·웹<br>SaaS 2.0 리뉴얼', hook: '복잡하게 얽힌 그룹 스케줄 구조를 시각화로 정리해서 이해관계자 합의 속도를 높였어요', period: '2025.08 – 2026.03', domain: ['b2b','web'], role: ['proto','collab'], acc: 'var(--acc-4)', case: 'CASE / 03' },
-    { id: 'proj-04', href: 'project-04.html', title: '디자인 워크플로<br>체계화 및 팀 교육', hook: 'PPT 기반 화면 설계서를 Figma 연동 체계로 바꿔서 매주 하루씩 새던 시간을 없앤 프로젝트예요', period: '2025.08 – 현재', domain: ['int'], role: ['desksys','collab'], acc: 'var(--acc-5)', case: 'CASE / 04' },
-    { id: 'proj-06', href: 'project-06.html', title: '홈오디오<br>Physical UI (PUI) 설계', hook: '스크린 없는 스피커에서, 라이팅과 사운드만으로 상태를 전달했어요', period: '2025.01 – 2025.05', domain: ['b2c','hw'], role: ['proto'], acc: 'var(--acc-6)', case: 'CASE / 06' },
-    { id: 'proj-07', href: 'project-07.html', title: '코딩 교육 플랫폼<br>디자인 시스템 구축', hook: '디자인 시스템 구축과 콘텐츠 표준화 제안으로 기획부터 오픈까지의 리드타임을 75% 줄인 프로젝트예요', period: '2022.04 – 2022.11', domain: ['b2c','web'], role: ['desksys','collab'], acc: 'var(--acc-7)', case: 'CASE / 07' }
+    { id: 'proj-05', href: 'project-05.html', title: 'webOS 로그인 케이스 구조 정리', hook: '이미 있던 문서에서, 아무도 검증하지 않았던 분류 기준을 다시 들여다봤어요', period: '2023.10 – 2024.05', domain: ['b2b','hw'], role: ['research'], acc: 'var(--acc-1)' },
+    { id: 'proj-01', href: 'project-01.html', title: '스마트 TV webOS Pay UX', hook: '법적 필수 태스크와 리모컨 사방향키라는 제약을 동시에 만족시키면서 결제 시간을 줄인 프로젝트예요', period: '2024.05 – 2024.12', domain: ['b2c','hw'], role: ['research','proto'], acc: 'var(--acc-2)' },
+    { id: 'proj-02', href: 'project-02.html', title: '게이밍 모니터 선행·양산 UX', hook: '4년 만의 제품 리뉴얼에서 AI 기능과 기존 기능의 충돌을 막는 UI 구조를 설계했어요', period: '2025.02 – 2025.12', domain: ['b2c','hw'], role: ['research','proto'], acc: 'var(--acc-3)' },
+    { id: 'proj-03', href: 'project-03.html', title: '의료용 앱·웹 SaaS 2.0 리뉴얼', hook: '복잡하게 얽힌 그룹 스케줄 구조를 시각화로 정리해서 이해관계자 합의 속도를 높였어요', period: '2025.08 – 2026.03', domain: ['b2b','web'], role: ['proto'], acc: 'var(--acc-4)' },
+    { id: 'proj-04', href: 'project-04.html', title: '디자인 워크플로 체계화 및 팀 교육', hook: 'PPT 기반 화면 설계서를 Figma 연동 체계로 바꿔서 매주 하루씩 새던 시간을 없앤 프로젝트예요', period: '2025.08 – 현재', domain: ['int'], role: ['desksys'], acc: 'var(--acc-5)' },
+    { id: 'proj-06', href: 'project-06.html', title: '홈오디오 Physical UI (PUI) 설계', hook: '스크린 없는 스피커에서, 라이팅과 사운드만으로 상태를 전달했어요', period: '2025.01 – 2025.05', domain: ['b2c','hw'], role: ['proto'], acc: 'var(--acc-6)' },
+    { id: 'proj-07', href: 'project-07.html', title: '코딩 교육 플랫폼 디자인 시스템 구축', hook: '디자인 시스템 구축과 콘텐츠 표준화 제안으로 기획부터 오픈까지의 리드타임을 75% 줄인 프로젝트예요', period: '2022.04 – 2022.11', domain: ['b2c','web'], role: ['desksys'], acc: 'var(--acc-7)' }
   ];
 
   var domainLabels = { b2c: 'B2C', b2b: 'B2B', hw: '하드웨어', web: '웹', int: '내부 툴' };
-  var roleLabels = { proto: '프로토타이핑', desksys: '디자인시스템', research: '리서치/UT', collab: '개발협업' };
+  var roleLabels = { proto: '프로토타이핑', desksys: '디자인시스템', research: '리서치/UT' };
   var domainColors = { b2c: '#FF5A36', b2b: '#7B61FF', hw: '#00A9E0', web: '#00BF8A', int: '#FFB627' };
   var domainTextColors = { b2c: '#fff', b2b: '#fff', hw: '#fff', web: '#fff', int: '#14140F' };
-  var roleColors = { proto: '#EC4899', desksys: '#16A34A', research: '#0EA5E9', collab: '#E08A00' };
+  var roleColors = { proto: '#EC4899', desksys: '#16A34A', research: '#0EA5E9' };
 
   var state = { domain: 'all', role: 'all' };
 
@@ -248,12 +250,14 @@
         return '<span class="tag tag-role tag-role-' + r + '">' + roleLabels[r] + '</span>';
       }).join('');
       return '<a class="work-card" href="' + p.href + '" data-domain="' + p.domain.join(' ') + '" data-role="' + p.role.join(' ') + '">' +
-        '<div class="work-thumb">' + thumb(p.id, p.acc) + '<span class="work-case">' + p.case + '</span></div>' +
         '<div class="work-body">' +
-        '<div class="work-header"><h2 class="work-title">' + p.title + '</h2><span class="work-meta">' + p.period + '</span></div>' +
-        '<p class="work-desc">' + p.hook + '</p>' +
         '<div class="work-tags">' + tagsHtml + '</div>' +
-        '</div></a>';
+        '<h2 class="work-title">' + p.title + '</h2>' +
+        '<p class="work-desc">' + p.hook + '</p>' +
+        '<span class="work-meta">' + p.period + '</span>' +
+        '</div>' +
+        '<div class="work-thumb">' + thumb(p.id, p.acc) + '</div>' +
+        '</a>';
     }).join('');
   }
 
