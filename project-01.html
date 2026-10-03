@@ -3,8 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="리모컨 조작 횟수를 줄여 스마트 TV 결제 시간을 약 30% 단축한 webOS Pay UX 사례">
 <title>스마트 TV webOS Pay UX — 고정인</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+  .case-intro { max-width: 760px; margin: 0 0 72px; font-size: 1.08rem; line-height: 1.8; color: #555; }
+  .case-figure { margin: 28px 0 0; padding: 24px; border-radius: 12px; background: #f6f4ec; overflow: hidden; }
+  .case-figure svg { display: block; width: 100%; height: auto; }
+  .case-figure figcaption { margin-top: 14px; font-size: .78rem; line-height: 1.6; color: #777; }
+  .case-kicker { font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+  .metric-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 0; list-style: none; }
+  .metric-list li { padding: 20px; border: 1px solid #e5e1d6; border-radius: 10px; background: #fff; }
+  .metric-list strong { display: block; margin-bottom: 6px; font-size: 1.25rem; color: #222; }
+  @media (max-width: 640px) {
+    .case-intro { margin-bottom: 48px; }
+    .case-figure { padding: 14px; }
+    .metric-list { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
@@ -17,53 +33,121 @@
   </ul>
 </nav>
 
-<div class="container">
-
-  <div class="p-header">
-    <div class="p-code">PROJ / 01 — 스마트 TV 플랫폼팀</div>
+<main class="container">
+  <header class="p-header">
+    <div class="p-code">PROJ / 01 — SMART TV · webOS PAY</div>
     <h1>스마트 TV webOS Pay UX</h1>
-    <p class="p-hook">법적 필수 태스크와 리모컨 사방향키라는 제약을 동시에 만족시키며 결제 시간을 줄인 프로젝트</p>
+    <p class="p-hook">태스크를 없앨 수 없다면, 리모컨으로 해야 할 조작을 줄였습니다.</p>
     <div class="p-tags">
       <span class="tag tag-domain tag-domain-b2c">B2C</span>
       <span class="tag tag-domain tag-domain-hw">하드웨어</span>
       <span class="tag tag-role tag-role-research">리서치/UT</span>
       <span class="tag tag-role tag-role-proto">프로토타이핑</span>
     </div>
-    <div class="p-meta">2024.05 – 2024.12 · 기여도 100%</div>
-  </div>
+    <div class="p-meta">2024.05 – 2024.12 · UX 1인 · 기여도 100%</div>
+  </header>
+
+  <p class="case-intro">webOS Pay는 TV에서 콘텐츠를 구매하는 결제 경험입니다. 법적 고지와 동의 단계를 유지하면서도 리모컨 사방향키에 맞게 흐름을 다시 설계해, 평균 결제 시간을 27초에서 18초로 줄였습니다.</p>
 
   <section class="block">
-    <div class="block-label">Background</div>
-    <p>스마트 TV 페이 기능 신규 런칭에 맞춰 카드 등록을 장려해야 하는 상황이었다. 광고 같은 간접 수익이 아닌 직접 수익으로 확장하는 기회였다.</p>
+    <div class="block-label">Context</div>
+    <p>기존 간편결제 흐름에 ‘결제 수단 선택’과 ‘할인 적용’이 추가될 예정이었습니다. 프로젝트에는 기획 2명, UX 1명, GUI 1명, 개발 4명이 참여했고, 저는 UX 시나리오와 프로토타입, 사용자 검증을 단독으로 담당했습니다.</p>
   </section>
 
   <section class="block">
-    <div class="block-label">Problem</div>
-    <p>프로젝트 초기 구매 시작부터 결제 완료까지 27초로, 태스크가 많고 번거로웠다. 케이스 스터디 및 법무 검토 결과 국내 서비스는 법적 고지·동의가 필수적이었는데, 이 요건이 리모컨 사방향키 조작이라는 제약과 정면으로 충돌했다.</p>
+    <div class="block-label">Challenge</div>
+    <p>기존 흐름도 구매 완료까지 약 27초가 걸렸습니다. 두 태스크가 더해지면 40초까지 늘어날 것으로 예상됐지만, 가격 고지와 약관 동의는 법적 필수였고 TV에서는 모든 선택에 리모컨 입력이 필요해 단계를 단순히 삭제할 수 없었습니다.</p>
   </section>
 
   <section class="block">
-    <div class="block-label">Process</div>
-    <p>Figma 프로토타입에 리모컨 사방향키 조작을 그대로 구현해 실제 환경에 가까운 조건에서 UT를 진행했다. 실무자 5명, 유저 5명을 대상으로 진행한 UT에서 '모두 동의' 버튼 이탈 패턴을 발견했고, 시선 흐름에 맞춰 버튼 위치와 구조를 개선했다.</p>
-    <div class="placeholder-fig">FIG — Before/After 와이어프레임 또는 UT 스크린샷 삽입 예정</div>
+    <div class="block-label">Insight</div>
+    <p>비슷한 결제 서비스를 비교해보니 모바일은 태스크가 많아도 스크롤과 터치로 빠르게 지나갈 수 있었지만, TV는 표시된 항목만큼 포커스를 이동해야 했습니다. 그래서 ‘단계 수’보다 ‘버튼 조작 횟수’를 줄이는 것이 체감 난이도를 낮춘다고 가정했습니다.</p>
+    <figure class="case-figure">
+      <svg viewBox="0 0 660 164" role="img" aria-labelledby="insight-title insight-desc">
+        <title id="insight-title">모바일과 스마트 TV 인터랙션 비교</title>
+        <desc id="insight-desc">모바일은 스크롤과 터치로 태스크를 빠르게 건너뛰지만 스마트 TV는 각 항목마다 포커스를 이동해야 한다.</desc>
+        <rect width="660" height="164" rx="10" fill="#f6f4ec"/>
+        <rect x="18" y="18" width="268" height="128" rx="8" fill="#fff" stroke="#d8d4c7"/>
+        <text x="38" y="47" class="case-kicker" fill="#222">MOBILE</text>
+        <text x="38" y="77" font-size="16" font-weight="700" fill="#222">스크롤 + 터치</text>
+        <text x="38" y="105" font-size="13" fill="#66645e">태스크가 많아도 빠르게 건너뜀</text>
+        <path d="M306 82h48" stroke="#e14b31" stroke-width="3"/>
+        <path d="M346 74l8 8-8 8" fill="none" stroke="#e14b31" stroke-width="3"/>
+        <rect x="374" y="18" width="268" height="128" rx="8" fill="#222"/>
+        <text x="394" y="47" class="case-kicker" fill="#f0b83e">SMART TV</text>
+        <text x="394" y="77" font-size="16" font-weight="700" fill="#fff">항목 = 포커스 이동</text>
+        <text x="394" y="105" font-size="13" fill="#c8c6bf">단계보다 버튼 조작 수가 핵심</text>
+        <circle cx="400" cy="126" r="4" fill="#f0b83e"/>
+        <circle cx="420" cy="126" r="4" fill="#f0b83e"/>
+        <circle cx="440" cy="126" r="4" fill="#f0b83e"/>
+      </svg>
+      <figcaption>모바일의 ‘태스크 수’보다 TV의 ‘포커스 이동 수’를 핵심 설계 지표로 전환했습니다.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block">
+    <div class="block-label">Test</div>
+    <p>내부 팀원 5명과 외부 참가자 5명에게 리모컨으로 영화 구매를 요청했습니다. 예상은 5회 조작이었지만 실제로는 평균 12.7회, 40초 이상이 걸렸습니다. 특히 ‘모두 동의’가 기본 포커스였는데도 다른 요소로 이동하며 약관 화면에서만 평균 4.2회 조작했습니다.</p>
+    <figure class="case-figure">
+      <svg viewBox="0 0 660 164" role="img" aria-labelledby="test-title test-desc">
+        <title id="test-title">1차 사용성 테스트 결과</title>
+        <desc id="test-desc">예상 5회와 달리 실제 평균 조작은 12.7회였고, 약관 화면에서만 평균 4.2회 조작했다.</desc>
+        <rect width="660" height="164" rx="10" fill="#f6f4ec"/>
+        <text x="22" y="30" font-size="12" font-weight="700" fill="#65625b">1차 사용성 테스트 · 10명</text>
+        <text x="22" y="66" font-size="13" fill="#65625b">예상</text>
+        <rect x="76" y="50" width="188" height="22" rx="11" fill="#d8d4c7"/>
+        <text x="278" y="66" font-size="13" font-weight="700" fill="#222">5회</text>
+        <text x="22" y="105" font-size="13" fill="#65625b">실제</text>
+        <rect x="76" y="89" width="478" height="22" rx="11" fill="#e14b31"/>
+        <text x="568" y="105" font-size="13" font-weight="700" fill="#222">12.7회</text>
+        <rect x="430" y="124" width="208" height="24" rx="12" fill="#222"/>
+        <text x="448" y="141" font-size="12" font-weight="700" fill="#fff">약관 화면만 평균 4.2회</text>
+      </svg>
+      <figcaption>1차 UT 결과: 예상보다 2.5배 많은 리모컨 조작이 발생했습니다.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block">
+    <div class="block-label">Solution</div>
+    <p>한 화면의 액션 요소를 3개 이하로 제한하고 핵심 화면은 한 화면에 한 버튼만 남겼습니다. ‘모두 동의’를 더 크게 만들고 경쟁 요소를 제거했으며, 단계형 헤더로 진행 상황을 보여줬습니다. 법무 검토를 거쳐 동의 항목은 한 번에 처리하도록 구성했습니다.</p>
+    <p>새로운 참가자 6명으로 다시 검증한 결과 평균 6.4회 조작, 18초로 단축됐습니다.</p>
+    <figure class="case-figure">
+      <svg viewBox="0 0 660 164" role="img" aria-labelledby="solution-title solution-desc">
+        <title id="solution-title">개선 전후 결제 시간 비교</title>
+        <desc id="solution-desc">결제 시간이 27초에서 18초로 약 30퍼센트 줄었고 버튼 조작은 7회에서 6회로 줄었다.</desc>
+        <rect width="660" height="164" rx="10" fill="#f6f4ec"/>
+        <rect x="18" y="18" width="242" height="128" rx="8" fill="#fff" stroke="#d8d4c7"/>
+        <text x="38" y="46" font-size="12" font-weight="700" fill="#65625b">BEFORE</text>
+        <text x="38" y="84" font-size="28" font-weight="700" fill="#222">27초</text>
+        <text x="38" y="115" font-size="13" fill="#65625b">버튼 조작 7회</text>
+        <path d="M284 82h64" stroke="#e14b31" stroke-width="3"/>
+        <path d="M340 74l8 8-8 8" fill="none" stroke="#e14b31" stroke-width="3"/>
+        <rect x="372" y="18" width="270" height="128" rx="8" fill="#222"/>
+        <text x="392" y="46" font-size="12" font-weight="700" fill="#f0b83e">AFTER · 2차 테스트</text>
+        <text x="392" y="84" font-size="28" font-weight="700" fill="#fff">18초</text>
+        <text x="392" y="115" font-size="13" fill="#d8d4c7">평균 6.4회 · 최종 6회 설계</text>
+        <rect x="515" y="54" width="104" height="26" rx="13" fill="#f0b83e"/>
+        <text x="532" y="72" font-size="12" font-weight="700" fill="#222">약 30% 단축</text>
+      </svg>
+      <figcaption>신규 태스크 2개를 추가하면서도 전체 결제 시간과 조작 수를 함께 줄였습니다.</figcaption>
+    </figure>
   </section>
 
   <section class="block">
     <div class="block-label">Impact</div>
-    <ul>
-      <li>결제 완료까지 27초 → 10초 단축</li>
-      <li>24년 하반기 런칭 → 25년 상반기 업데이트 버전까지 단독 주도</li>
+    <ul class="metric-list">
+      <li><strong>27초 → 18초</strong>평균 결제 시간 약 30% 단축</li>
+      <li><strong>7회 → 6회</strong>신규 태스크 2개 추가 후에도 버튼 조작 감소</li>
     </ul>
   </section>
 
   <section class="block">
-    <div class="block-label">Learning</div>
-    <p>TV와 모바일의 인터랙션 차이를 크게 느꼈고, 기기에 맞는 가장 좋은 인터랙션이 무엇일지는 결국 UT로 확인해야 한다는 걸 배웠다.</p>
+    <div class="block-label">Reflection</div>
+    <p>큰 화면이라고 많은 정보를 한 번에 보여주는 것이 항상 좋은 것은 아니었습니다. TV에서는 포커스 이동 가능성 자체가 인지 부담이 됩니다. 실제 리모컨 조작을 재현한 프로토타입과 반복 검증이 최종 구조를 결정했습니다.</p>
   </section>
 
   <a class="back-link" href="index.html#work">← 전체 프로젝트로 돌아가기</a>
-
-</div>
+</main>
 
 <footer>© 2026 Ko Jungin · UX Designer</footer>
 
