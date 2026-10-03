@@ -1,324 +1,204 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>jungin.ko — UX Designer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="고정인, LG전자 UX 디자이너 포트폴리오">
+  <title>jungin ko — UX Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
+  <header class="home-header" id="contact" aria-label="상단 메뉴">
+    <button class="header-link cv-action" type="button" id="cv-download">CV DOWNLOAD <span aria-hidden="true">↓</span></button>
+    <a class="header-link contact-action" href="mailto:ski1341@naver.com">CONTACT <span aria-hidden="true">↗</span></a>
+  </header>
 
-<nav>
-  <a href="index.html" class="nav-name">jungin.ko</a>
-  <ul class="nav-links">
-    <li><a href="#work">WORK</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
-</nav>
+  <main>
+    <section class="home-hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">jungin ko</h1>
+      <p class="hero-korean-name">고정인 · JUNG-IN KO</p>
+      <p class="hero-role">UX DESIGNER&nbsp;&nbsp; LG ELECTRONICS</p>
+    </section>
 
-<!-- HERO -->
-<div class="container">
-  <div class="hero">
-    <p class="hero-eyebrow">UX DESIGNER · LG ELECTRONICS</p>
-    <h1 class="hero-name">Ko Jungin</h1>
-    <div class="hero-meta">
-      <span>Seoul, Korea</span>
-      <span id="career-tenure"></span>
-      <span>KR Native</span>
-      <span>EN Advanced</span>
-      <span>JP Advanced</span>
-      <span>CN Intermediate</span>
-    </div>
-  </div>
-</div>
+    <nav class="work-filters" id="work" aria-label="작업 분류">
+      <button class="work-filter active" type="button" data-target="featured-work"><span>메인 작업</span><b>3</b></button>
+      <button class="work-filter" type="button" data-target="experience"><span>하드웨어</span><b>8</b></button>
+      <button class="work-filter" type="button" data-target="experience"><span>웹</span><b>8</b></button>
+      <button class="work-filter" type="button" data-target="experience"><span>AI</span><b>8</b></button>
+      <button class="work-filter" type="button" data-target="experience"><span>B2B</span><b>8</b></button>
+    </nav>
 
-<!-- FILTER (keyword cloud / diagram) -->
-<div class="filter-section" id="work">
-<div class="filter-wrap">
-  <div class="filter-inner">
-    <div class="filter-diagram">
-      <div class="filter-circle-wrap">
-        <span class="filter-group-label">domain</span>
-        <div class="filter-circle" id="domain-filters"></div>
-      </div>
-      <div class="filter-circle-wrap">
-        <span class="filter-group-label">role</span>
-        <div class="filter-circle" id="role-filters"></div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- WORK LIST -->
-<div class="container">
-  <div class="work-list" id="work-list" style="margin: 3.5rem 0 4.5rem;"></div>
-  <div class="empty-state" id="empty-state">해당하는 프로젝트가 없습니다.</div>
-</div>
-
-<!-- ABOUT -->
-<div class="container">
-  <section id="about">
-    <h2 class="section-heading">About</h2>
-
-    <div>
-      <h3 class="section-sub">Skills</h3>
-      <div class="skills-grid">
-        <div class="skill-block">
-          <div class="skill-cat">디자인</div>
-          <div class="skill-items">Figma, ProtoPie<br>Adobe Ai / Ps / Ae / Xd<br>Blender, Sketchup, V-ray<br>Motion Graphics</div>
+    <section class="featured-work" id="featured-work" aria-label="대표 작업">
+      <a class="featured-card featured-card-lime" href="project-03.html">
+        <div class="featured-copy">
+          <div class="card-meta"><time datetime="2025-08">2025-08</time><span class="card-tags"><i>웹</i><i>B2B</i><i>프로토타이핑</i></span></div>
+          <h2>의료 장비 관리 솔루션 설계하기</h2>
+          <p>의료용 모니터 B2B SaaS</p>
         </div>
-        <div class="skill-block">
-          <div class="skill-cat">시스템·협업</div>
-          <div class="skill-items">디자인 시스템 구축·운영<br>어셋 라이브러리 관리<br>팀 교육<br>개발팀 스펙 협의·QA</div>
+        <div class="featured-image"><img src="assets/medical-saas.png" alt="시간표의 복잡한 정보 구조를 확대한 이미지"></div>
+      </a>
+
+      <a class="featured-card featured-card-lavender" href="project-01.html">
+        <div class="featured-copy">
+          <div class="card-meta"><time datetime="2025-08">2025-08</time><span class="card-tags"><i>하드웨어</i><i>프로토타이핑</i></span></div>
+          <h2>TV에서 결제하는 경험, 프로토타이핑하기</h2>
+          <p>스마트 TV 빌링, 페이</p>
         </div>
-        <div class="skill-block">
-          <div class="skill-cat">개발 기초</div>
-          <div class="skill-items">HTML, CSS<br>Python, Java<br>(협업·QA 수준 코드 리뷰)</div>
+        <div class="featured-image tv-image"><img src="assets/webos-pay.png" alt="TV 리모컨으로 사용하는 결제 화면 프로토타입"></div>
+      </a>
+
+      <a class="featured-card featured-card-lavender" href="project-06.html">
+        <div class="featured-copy">
+          <div class="card-meta"><time datetime="2025-08">2025-08</time><span class="card-tags"><i>웹</i><i>B2B</i><i>프로토타이핑</i></span></div>
+          <h2>화면이 없는 제품 설계하기</h2>
+          <p>오디오 PUI</p>
         </div>
-        <div class="skill-block">
-          <div class="skill-cat">언어</div>
-          <div class="skill-items">한국어 (원어민)<br>영어 OPIc IH<br>일본어 JLPT N2<br>중국어 HSK 5급</div>
+        <div class="featured-image"><img src="assets/audio-pui.png" alt="상단 조작부가 보이는 검은색 오디오 제품"></div>
+      </a>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"><span>CV &amp; WORKS</span></div>
+
+    <section class="about-intro" id="about" aria-labelledby="about-title">
+      <div class="about-copy">
+        <h2 id="about-title" class="sr-only">소개</h2>
+        <p>안녕하세요. 고정인입니다.</p>
+        <p>저는 최근 제조 대기업에서 B2B SaaS 프로덕트의 UX를 담당하고 있습니다.<br>작년까지는 B2C 하드웨어 제품을 자주 담당했었어요.<br>그 전에는 스타트업에서 웹 프로덕트를 관리했었습니다.</p>
+        <p>최근엔 직접 스타일가이드를 만들거나 하는 일이 적어졌지만<br>아직도 그래픽, 시각디자인, 인터랙션, 편집에도 관심이 많아요.<br>그래픽 개인작업은 이곳에 모아두었습니다!</p>
+        <p class="language-list">KR Native · EN Advanced · JP Advanced · CN Intermediate</p>
+      </div>
+
+      <div class="capability" aria-label="주요 업무 범위">
+        <div class="capability-map" aria-hidden="true">
+          <span class="cap-label label-plan">기획</span>
+          <span class="cap-label label-graphic">그래픽</span>
+          <span class="cap-label label-dev">개발</span>
+          <span class="cap-center">주로 하는 일</span>
+          <i class="cap-circle circle-one"></i><i class="cap-circle circle-two"></i><i class="cap-circle circle-three"></i>
+          <b class="cap-dot"></b>
+        </div>
+        <div class="capability-list" role="list">
+          <button type="button" disabled>상품성 판단하기</button>
+          <button type="button" disabled>VoC 관리</button>
+          <button type="button" class="selected" aria-pressed="true">화면 설계</button>
+          <button type="button" class="selected" aria-pressed="true">UX 라이팅</button>
+          <button type="button" disabled>스타일 가이드 제작</button>
+          <button type="button" disabled>검증</button>
+          <button type="button" disabled>실제 개발</button>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div style="margin-top: 2.75rem;">
-      <h3 class="section-sub">Education</h3>
-      <div class="edu-item">
-        <div class="edu-name">홍익대학교</div>
-        <div class="edu-detail">시각디자인과 (주전공) · 경영학과 (부전공)</div>
-        <div class="edu-period">2018.03 – 2022.02</div>
-        <div class="edu-sub">iid Lab (2020) — AR 기반 어린이집 서비스 기획 및 인터랙션 흐름 설계<br>Deep Lab (2021) — 의학 데이터 시각화 편집 프로젝트</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-name">서울예술고등학교</div>
-        <div class="edu-detail">미술과</div>
-        <div class="edu-period">2015.03 – 2018.02</div>
-      </div>
-    </div>
+    <section class="experience" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title" class="sr-only">경력과 전체 작업</h2>
 
-    <div style="margin-top: 2.25rem;">
-      <h3 class="section-sub">Earlier Experience</h3>
-      <div class="edu-item">
-        <div class="edu-name">현대카드 · 디자인팀 인턴</div>
-        <div class="edu-detail">카드 플레이트 디자인 — 컨셉 확정부터 시안 제작·PT까지 2주 내 완료</div>
-        <div class="edu-period">2023.05 – 2023.06</div>
-      </div>
-    </div>
-  </section>
-</div>
+      <article class="year-row">
+        <h3><span aria-hidden="true">⌄</span> 2026</h3>
+        <div class="career-entry">
+          <strong>LG전자 디자인경영센터 재직 중. 4년차</strong>
+          <p><b>UX 디자인팀</b><em>연구원</em></p>
+          <p>B2B 의료용 모니터 솔루션 담당<br>B2B 전자칠판 솔루션 담당<br>B2B 통합 콘솔 대시보드, 데이터, 인터널오피스 담당</p>
+        </div>
+        <div class="year-works">
+          <a href="#" class="small-work-card"><span>2025-08 <i>AI</i><i>3D</i></span><strong>AI 같지 않은 AI 애니메이션,<br>20분 내내 일관성 유지하기</strong><small>아동 타겟 3D 애니메이션</small></a>
+          <a href="#" class="small-work-card"><span>2025-08 <i>AI</i><i>B2B</i></span><strong>VoC 피드백 관리 용 사내 툴,<br>AI로 1시간 만에 만들어보기</strong><small>의료용 고객 VoC 센터</small></a>
+          <a href="#" class="small-work-card small-work-lime"><span>2026-01 <i>웹</i><i>B2B</i></span><strong>꼬여버린 온보딩, 화면 하나로 빠르게 대응하기</strong><small>전자칠판 B2B 웹</small></a>
+        </div>
+      </article>
 
-<!-- CONTACT -->
-<div class="container">
-  <section id="contact">
-    <h2 class="section-heading">Contact</h2>
-    <div class="contact-row">
-      <div class="contact-item">
-        <span class="contact-label">Email</span>
-        <span class="contact-value"><a href="mailto:ski1341@naver.com">ski1341@naver.com</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Phone</span>
-        <span class="contact-value">+82-10-3631-8947</span>
-      </div>
-    </div>
-  </section>
-</div>
+      <article class="year-row">
+        <h3><span aria-hidden="true">⌄</span> 2025</h3>
+        <div class="career-entry">
+          <p><b>UX 디자인팀</b><em>연구원</em></p>
+          <p>게이밍 모니터 하드웨어 UX 담당<br>홈오디오 스피커 UX 담당<br>B2B 의료용 모니터 솔루션 담당</p>
+        </div>
+        <div class="year-works">
+          <a href="project-03.html" class="small-work-card"><span>2025-08 <i>웹</i><i>B2B</i></span><strong>기존 유저가 갈아탈만큼 매력적인 스케줄 기능 설계하기</strong><small>의료용 모니터 B2B SaaS</small></a>
+          <a href="project-02.html" class="small-work-card small-work-lavender"><span>2026-01 <i>AI</i><i>하드웨어</i></span><strong>신규 AI 기능 도입 제안부터 양산, 유지까지 담당하기</strong><small>AI 탑재 게이밍 모니터</small></a>
+          <a href="project-06.html" class="small-work-card small-work-lavender"><span>2025-08 <i>하드웨어</i><i>PUI</i></span><strong>화면이 없는 제품은 어떻게 설계해야 할까?</strong><small>오디오 PUI</small></a>
+        </div>
+      </article>
 
-<footer>
-  © 2026 Ko Jungin · UX Designer
-</footer>
+      <article class="year-row">
+        <h3><span aria-hidden="true">⌄</span> 2024</h3>
+        <div class="career-entry">
+          <p><b>UX 디자인팀</b><em>연구원</em></p>
+          <p>스마트 TV 계정 담당<br>스마트 TV 빌링 페이 담당</p>
+        </div>
+        <div class="year-works">
+          <a href="project-04.html" class="small-work-card"><span>2025-08 <i>내부 툴</i><i>Figma</i></span><strong>PPT만 쓰던 팀, 피그마로 툴 전환까지 얼마나 걸릴까?</strong><small>내부 툴</small></a>
+          <a href="project-01.html" class="small-work-card small-work-lavender"><span>2025-08 <i>하드웨어</i><i>프로토타이핑</i></span><strong>TV에서 결제하는 경험, 프로토타이핑하기</strong><small>스마트 TV 빌링, 페이</small></a>
+          <a href="project-05.html" class="small-work-card small-work-lavender"><span>2026-01 <i>TV</i><i>UX</i></span><strong>TV에서 로그인, 자연스럽게 유도하려면?</strong><small>스마트 TV 계정, 로그인</small></a>
+        </div>
+      </article>
 
-<script>
-(function () {
-  var careerStart = new Date(2022, 3, 1); // 2022.04 입사
-  var now = new Date();
-  var years = now.getFullYear() - careerStart.getFullYear();
-  var months = now.getMonth() - careerStart.getMonth();
-  if (now.getDate() < careerStart.getDate()) months -= 1;
-  if (months < 0) { years -= 1; months += 12; }
-  var tenureEl = document.getElementById('career-tenure');
-  if (tenureEl) tenureEl.textContent = years + '년 ' + months + '개월차';
-})();
+      <article class="year-row">
+        <h3><span aria-hidden="true">⌄</span> 2022</h3>
+        <div class="career-entry">
+          <p><b>데이콘 재직</b><em>프로덕트 디자이너</em></p>
+          <p>웹 프로덕트 유지 보수<br>웹 프로모션 이미지 제작<br>신규 교육 프로덕트 기획 및 UX</p>
+        </div>
+        <div class="year-works">
+          <a href="project-07.html" class="small-work-card small-work-lime"><span>2026-01 <i>웹</i><i>스타트업</i></span><strong>0부터 시작하는 스타트업 디자인팀 생존기</strong><small>스타트업 웹</small></a>
+          <a href="#" class="small-work-card small-work-lime"><span>2026-01 <i>그래픽</i><i>프로토타이핑</i></span><strong>어쩌다보니 그래픽 소스부터 프로토타이핑까지 다 했던 졸업 학기</strong><small>스타트업 웹</small></a>
+        </div>
+      </article>
 
-(function () {
-  var projects = [
-    { id: 'proj-05', href: 'project-05.html', title: 'webOS 로그인 케이스 구조 정리', hook: '이미 있던 문서에서, 아무도 검증하지 않았던 분류 기준을 다시 들여다봤어요', period: '2023.10 – 2024.05', domain: ['b2b','hw'], role: ['research'], acc: 'var(--acc-1)' },
-    { id: 'proj-01', href: 'project-01.html', title: '스마트 TV webOS Pay UX', hook: '법적 필수 태스크와 리모컨 사방향키라는 제약을 동시에 만족시키면서 결제 시간을 줄인 프로젝트예요', period: '2024.05 – 2024.12', domain: ['b2c','hw'], role: ['research','proto'], acc: 'var(--acc-2)' },
-    { id: 'proj-02', href: 'project-02.html', title: '게이밍 모니터 선행·양산 UX', hook: '4년 만의 제품 리뉴얼에서 AI 기능과 기존 기능의 충돌을 막는 UI 구조를 설계했어요', period: '2025.02 – 2025.12', domain: ['b2c','hw'], role: ['research','proto'], acc: 'var(--acc-3)' },
-    { id: 'proj-03', href: 'project-03.html', title: '의료용 앱·웹 SaaS 2.0 리뉴얼', hook: '복잡하게 얽힌 그룹 스케줄 구조를 시각화로 정리해서 이해관계자 합의 속도를 높였어요', period: '2025.08 – 2026.03', domain: ['b2b','web'], role: ['proto'], acc: 'var(--acc-4)' },
-    { id: 'proj-04', href: 'project-04.html', title: '디자인 워크플로 체계화 및 팀 교육', hook: 'PPT 기반 화면 설계서를 Figma 연동 체계로 바꿔서 매주 하루씩 새던 시간을 없앤 프로젝트예요', period: '2025.08 – 현재', domain: ['int'], role: ['desksys'], acc: 'var(--acc-5)' },
-    { id: 'proj-06', href: 'project-06.html', title: '홈오디오 Physical UI (PUI) 설계', hook: '스크린 없는 스피커에서, 라이팅과 사운드만으로 상태를 전달했어요', period: '2025.01 – 2025.05', domain: ['b2c','hw'], role: ['proto'], acc: 'var(--acc-6)' },
-    { id: 'proj-07', href: 'project-07.html', title: '코딩 교육 플랫폼 디자인 시스템 구축', hook: '디자인 시스템 구축과 콘텐츠 표준화 제안으로 기획부터 오픈까지의 리드타임을 75% 줄인 프로젝트예요', period: '2022.04 – 2022.11', domain: ['b2c','web'], role: ['desksys'], acc: 'var(--acc-7)' }
-  ];
+      <article class="year-row">
+        <h3><span aria-hidden="true">⌄</span> 2021</h3>
+        <div class="career-entry">
+          <p><b>홍익대학교 졸업</b><em>2018.03 ~ 2022.02</em></p>
+          <p>시각디자인 전공<br>경영학 부전공</p>
+        </div>
+        <div class="year-works">
+          <a href="#" class="small-work-card"><span>2026-01 <i>자동화</i><i>그래픽</i></span><strong>반복되는 썸네일 만들기, 5분 컷으로 줄인 비법</strong><small>스타트업 웹</small></a>
+        </div>
+      </article>
 
-  var domainLabels = { b2c: 'B2C', b2b: 'B2B', hw: '하드웨어', web: '웹', int: '내부 툴' };
-  var roleLabels = { proto: '프로토타이핑', desksys: '디자인시스템', research: '리서치/UT' };
-  var domainColors = { b2c: '#FF5A36', b2b: '#7B61FF', hw: '#00A9E0', web: '#00BF8A', int: '#FFB627' };
-  var domainTextColors = { b2c: '#fff', b2b: '#fff', hw: '#fff', web: '#fff', int: '#14140F' };
-  var roleColors = { proto: '#EC4899', desksys: '#16A34A', research: '#0EA5E9' };
+      <button class="all-work-toggle" id="all-work-toggle" type="button" aria-expanded="false">
+        <span class="show-label">모든 작업 보기</span><span class="hide-label">작업란 접기</span>
+      </button>
+    </section>
+  </main>
 
-  var state = { domain: 'all', role: 'all' };
+  <footer class="home-footer">2026 <span>·</span> All Rights Reserved jungin.ko <span>·</span></footer>
 
-  function countTags(key, labels) {
-    var counts = {};
-    Object.keys(labels).forEach(function (v) { counts[v] = 0; });
-    projects.forEach(function (p) {
-      p[key].forEach(function (v) { counts[v] = (counts[v] || 0) + 1; });
-    });
-    return counts;
-  }
+  <script>
+    (function () {
+      var body = document.body;
+      var toggle = document.getElementById('all-work-toggle');
+      var cv = document.getElementById('cv-download');
 
-  var rotations = [-6, 5, -4, 7, -8, 4, 6, -5];
-
-  function buildFilterGroup(container, labels, counts, filterKey, colors, textColors) {
-    var values = Object.keys(labels);
-    var countVals = values.map(function (v) { return counts[v]; });
-    var min = Math.min.apply(null, countVals);
-    var max = Math.max.apply(null, countVals);
-
-    var html = '<button class="filter-btn all-btn active" data-filter="' + filterKey + '" data-value="all" style="--rot: ' + rotations[0] + 'deg;">전체</button>';
-    values.forEach(function (v, i) {
-      var c = counts[v];
-      var t = max === min ? 0.5 : (c - min) / (max - min);
-      var size = (15 + t * 9).toFixed(1);
-      var bg = colors[v];
-      var color = textColors ? textColors[v] : '#fff';
-      var rot = rotations[(i + 1) % rotations.length];
-      html += '<button class="filter-btn ' + filterKey + '-btn" data-filter="' + filterKey + '" data-value="' + v + '" ' +
-        'style="--freq-size: ' + size + 'px; --freq-bg: ' + bg + '; --freq-color: ' + color + '; --rot: ' + rot + 'deg;">' +
-        labels[v] + '</button>';
-    });
-    container.innerHTML = html;
-  }
-
-  /* ---- per-project SVG thumbnail diagrams ---- */
-  function thumb(id, acc) {
-    var bg = '<rect width="400" height="250" fill="#fff"/>' +
-             '<rect width="400" height="250" fill="' + acc + '" fill-opacity="0.07"/>';
-    var s = { stroke: acc, sw: 3.5 };
-    var svgs = {
-      'proj-05': // layered structure: policy / login flow / 4 cases
-        '<g fill="none" stroke="' + acc + '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="70" y="46" width="260" height="34" rx="6"/>' +
-        '<rect x="70" y="108" width="260" height="34" rx="6"/>' +
-        '<rect x="55" y="170" width="70" height="40" rx="6"/><rect x="145" y="170" width="70" height="40" rx="6"/>' +
-        '<rect x="235" y="170" width="70" height="40" rx="6"/>' +
-        '<path d="M200 80 V108 M130 142 V170 M180 142 V170 M270 142 V170"/>' +
-        '</g>',
-      'proj-01': // TV frame with dpad + check
-        '<g fill="none" stroke="' + acc + '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="70" y="55" width="260" height="150" rx="10"/>' +
-        '<path d="M175 155 l20 20 l35 -45" />' +
-        '<circle cx="200" cy="235" r="16"/>' +
-        '<path d="M200 219 v-6 M200 251 v6 M184 235 h-6 M216 235 h6"/>' +
-        '</g>',
-      'proj-02': // monitor with AI badge corner
-        '<g fill="none" stroke="' + acc + '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="65" y="50" width="270" height="130" rx="8"/>' +
-        '<path d="M170 180 v20 M230 180 v20 M150 200 h100"/>' +
-        '<circle cx="270" cy="90" r="20"/>' +
-        '<path d="M262 90 h16 M270 82 v16"/>' +
-        '</g>',
-      'proj-03': // hierarchical calendar grid (group schedule)
-        '<g fill="none" stroke="' + acc + '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="60" y="55" width="280" height="150" rx="8"/>' +
-        '<path d="M60 95 h280"/>' +
-        '<path d="M150 95 v110 M240 95 v110"/>' +
-        '<path d="M90 120 h30 M90 150 h30 M90 180 h30"/>' +
-        '<path d="M180 120 h30 M270 120 h30 M270 150 h30"/>' +
-        '</g>',
-      'proj-04': // flow / connected workflow nodes
-        '<g fill="none" stroke="' + acc + '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<circle cx="90" cy="90" r="20"/><circle cx="200" cy="60" r="20"/><circle cx="200" cy="160" r="20"/><circle cx="310" cy="110" r="20"/>' +
-        '<path d="M108 85 L182 65 M108 98 L182 155 M220 68 L292 105 M220 152 L292 118"/>' +
-        '</g>',
-      'proj-06': // speaker with sound waves
-        '<g fill="none" stroke="' + acc + '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="150" y="55" width="100" height="150" rx="16"/>' +
-        '<circle cx="200" cy="105" r="24"/><circle cx="200" cy="165" r="14"/>' +
-        '<path d="M270 90 q22 40 0 80 M295 70 q40 60 0 120"/>' +
-        '<path d="M130 90 q-22 40 0 80 M105 70 q-40 60 0 120"/>' +
-        '</g>',
-      'proj-07': // notebook / JSON cells (5-cell structure)
-        '<g fill="none" stroke="' + acc + '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="80" y="48" width="240" height="30" rx="5"/>' +
-        '<rect x="80" y="88" width="240" height="30" rx="5"/>' +
-        '<rect x="80" y="128" width="240" height="30" rx="5"/>' +
-        '<rect x="80" y="168" width="112" height="30" rx="5"/>' +
-        '<rect x="208" y="168" width="112" height="30" rx="5"/>' +
-        '</g>'
-    };
-    return '<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">' + bg + (svgs[id] || '') + '</svg>';
-  }
-
-  function buildCards() {
-    var listEl = document.getElementById('work-list');
-    listEl.innerHTML = projects.map(function (p) {
-      var tagsHtml = p.domain.map(function (d) {
-        return '<span class="tag tag-domain tag-domain-' + d + '">' + domainLabels[d] + '</span>';
-      }).join('') + p.role.map(function (r) {
-        return '<span class="tag tag-role tag-role-' + r + '">' + roleLabels[r] + '</span>';
-      }).join('');
-      return '<a class="work-card" href="' + p.href + '" data-domain="' + p.domain.join(' ') + '" data-role="' + p.role.join(' ') + '">' +
-        '<div class="work-body">' +
-        '<div class="work-tags">' + tagsHtml + '</div>' +
-        '<h2 class="work-title">' + p.title + '</h2>' +
-        '<p class="work-desc">' + p.hook + '</p>' +
-        '<span class="work-meta">' + p.period + '</span>' +
-        '</div>' +
-        '<div class="work-thumb">' + thumb(p.id, p.acc) + '</div>' +
-        '</a>';
-    }).join('');
-  }
-
-  function applyFilter() {
-    var cards = document.querySelectorAll('.work-card');
-    var visible = 0;
-    cards.forEach(function (card) {
-      var domains = card.getAttribute('data-domain') ? card.getAttribute('data-domain').split(' ') : [];
-      var roles   = card.getAttribute('data-role')   ? card.getAttribute('data-role').split(' ')   : [];
-      var domainOk = state.domain === 'all' || domains.indexOf(state.domain) !== -1;
-      var roleOk   = state.role   === 'all' || roles.indexOf(state.role)     !== -1;
-      if (domainOk && roleOk) {
-        card.classList.remove('hidden');
-        visible++;
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-    var empty = document.getElementById('empty-state');
-    if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
-  }
-
-  function attachFilterHandlers() {
-    document.querySelectorAll('.filter-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var filter = btn.getAttribute('data-filter');
-        var value  = btn.getAttribute('data-value');
-        state[filter] = value;
-        document.querySelectorAll('.filter-btn[data-filter="' + filter + '"]').forEach(function (b) {
-          b.classList.remove('active');
-        });
-        btn.classList.add('active');
-        applyFilter();
+      toggle.addEventListener('click', function () {
+        var expanded = body.classList.toggle('works-expanded');
+        toggle.setAttribute('aria-expanded', String(expanded));
+        if (!expanded) document.getElementById('experience').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
-    });
-  }
 
-  var domainCounts = countTags('domain', domainLabels);
-  var roleCounts = countTags('role', roleLabels);
-  buildFilterGroup(document.getElementById('domain-filters'), domainLabels, domainCounts, 'domain', domainColors, domainTextColors);
-  buildFilterGroup(document.getElementById('role-filters'), roleLabels, roleCounts, 'role', roleColors, null);
-  buildCards();
-  attachFilterHandlers();
-  applyFilter();
-})();
-</script>
+      cv.addEventListener('click', function () { window.print(); });
 
+      document.querySelectorAll('.work-filter').forEach(function (button) {
+        button.addEventListener('click', function () {
+          document.querySelectorAll('.work-filter').forEach(function (item) { item.classList.remove('active'); });
+          button.classList.add('active');
+          var target = document.getElementById(button.getAttribute('data-target'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      document.querySelectorAll('.capability-list button:not(:disabled)').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var pressed = button.getAttribute('aria-pressed') === 'true';
+          button.setAttribute('aria-pressed', String(!pressed));
+          button.classList.toggle('selected', !pressed);
+        });
+      });
+
+      document.querySelectorAll('a[href="#"]').forEach(function (link) {
+        link.addEventListener('click', function (event) { event.preventDefault(); });
+      });
+    })();
+  </script>
 </body>
-
 </html>
